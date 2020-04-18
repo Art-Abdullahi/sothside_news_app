@@ -1,7 +1,6 @@
 import React from "react";
 import "../../css/article.css";
 
-import { Link } from "react-router-dom";
 const Article = ({ article }) => {
   return (
     <div className="container card mb-3 mt-3">
@@ -20,9 +19,10 @@ const Article = ({ article }) => {
         <p className="card-text">
           <small className="date">Last updated 3 mins ago</small>
         </p>
-        <Link to="/details">
-          <button className="btn btn-lg btn-primary">Read More</button>
-        </Link>
+
+        <a href={article.url} className="btn btn-lg btn-primary">
+          Read More
+        </a>
       </div>
     </div>
   );

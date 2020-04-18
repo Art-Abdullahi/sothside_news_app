@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import Article from "./Article";
 import "../../css/article.css";
-
+import Example from "../layouts/Spinner";
 const TopHeadlines = () => {
   const [articles, setArticles] = useState([]);
+  const [IsLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     fetch(
@@ -12,18 +13,23 @@ const TopHeadlines = () => {
       .then((res) => res.json())
       .then((data) => {
         setArticles(data.articles);
+        setIsLoading(true);
       })
       .catch((err) => console.log(err));
   }, []);
   return (
     <div className="container">
-      <div className="row">
-        <div className="col">
-          {articles.map((article, index) => (
-            <Article key={index} article={article} />
-          ))}
+      {IsLoading ? (
+        <div className="row">
+          <div className="col">
+            {articles.map((article, index) => (
+              <Article key={index} article={article} />
+            ))}
+          </div>
         </div>
-      </div>
+      ) : (
+        <Example className="text-center" />
+      )}
     </div>
   );
 };
