@@ -1,7 +1,20 @@
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Times New Roman", Times, serif;
+}
 nav {
   background: #152245;
   color: white;
 }
 footer {
   background: #152245;
+}
+.toggle {
+  color: white !important;
+  background: white;
+}
+.name {
+  color: #152245;
 }

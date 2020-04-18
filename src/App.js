@@ -2,7 +2,7 @@ import React from "react";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Route, Switch } from "react-router-dom";
-import Navbar from "./components/layouts/Navbar";
+import Navstrap from "./components/layouts/Navstrap";
 import Footer from "./components/layouts/Footer";
 import TopHeadlines from "./components/pages/TopHeadlines";
 import Tech from "./components/pages/Tech";
@@ -17,7 +17,7 @@ import NotFound from "./components/pages/NotFound";
 function App() {
   return (
     <div>
-      <Navbar />
+      <Navstrap />
       <Switch>
         <Route exact path="/" component={TopHeadlines} />
         <Route path="/technology" component={Tech} />
